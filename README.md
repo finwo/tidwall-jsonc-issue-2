@@ -16,6 +16,8 @@ dep i
 make
 ```
 
+---
+
 ### Ze issue
 
 **Expected behavior**:
