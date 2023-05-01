@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <pre id=output></pre>
+    <script>
+      let counter = 0;
+      setInterval(async () => {
+        await window.set_title(`Runtime: ${++counter} seconds`);
+      }, 1000);
+    </script>
+  </body>
+</html>
