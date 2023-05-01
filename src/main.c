@@ -17,6 +17,10 @@ struct ex_context {
   webview_t w;
 };
 
+#ifndef BUFSIZ
+#define BUFSIZ 4096
+#endif
+
 void fn_set_title(const char *seq, const char *req, void *udata) {
   struct ex_context *ctx = udata;
 
@@ -27,8 +31,8 @@ void fn_set_title(const char *seq, const char *req, void *udata) {
   json = json_first(json);
 
   printf("%.*s\n", (int)json_raw_length(json), json_raw(json));
-  char *newTitle = calloc(512, 1);
-  json_string_copy(json, newTitle, sizeof(newTitle));
+  char *newTitle = calloc(BUFSIZ, 1);
+  json_string_copy(json, newTitle, BUFSIZ);
 
   printf("%s\n", newTitle);
   webview_set_title(ctx->w, newTitle);
