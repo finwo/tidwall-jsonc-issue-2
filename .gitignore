@@ -2,3 +2,4 @@
 /src/index.h
 /util/bin2c
 *.o
+/example
