@@ -29,3 +29,8 @@ $(OBJ): src/index.h
 
 example: $(OBJ)
 	$(CPP) $(LDFLAGS) $(OBJ) -o $@
+
+.PHONY: clean
+clean:
+	rm -rf $(OBJ)
+	rm -f example
